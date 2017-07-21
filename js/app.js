@@ -1,8 +1,7 @@
 $(() => { //jQuery Window Onload intialization.
-  //
-  // $('body').dialog({
-  //   autoOpen: true
-  // });
+// $('body').dialog({
+//   autoOpen: true
+// });
 
 //Global Variables
 let player1;
@@ -42,7 +41,8 @@ let binary = 0;
 
   //Create specific cards
     //Create 1 legendary per character deck.
-    const kiljaeden = new Legendary ("Kil'Jaeden the Deceiver", 10, 10, $('<img src="images/cards/kilj.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+    const kiljaeden = new Legendary (
+      "Kil'Jaeden the Deceiver", 10, 10, $('<img src="images/cards/kilj.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
 
     const emra = new Legendary ("Emrakul, the Aeons Torn", 10, 10, $('<img src="images/cards/emrakul.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
 
@@ -54,7 +54,6 @@ let binary = 0;
     const voidwalker = new Card ("Voidwalker", 1, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
 
 //Shuffle decks using Durstenfeld + Fisher-Yates shuffle
-
   const shuffle = (arr) => {
     for (let i = arr.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -68,8 +67,8 @@ let binary = 0;
 //Start Game Function ---------------------------->
 const startGame = () => {
 
+//Player 1 Chooses
   const player1Choose = prompt("Player 1: Pick your hero", "sargeras / nicol / ra / arceus");
-
   switch(player1Choose.toLowerCase()){
 
     case "sargeras":
@@ -124,8 +123,8 @@ const startGame = () => {
       break;
   }
 
+//Player 2 chooses
   const player2Choose = prompt("Player 2: Pick your hero", "sargeras / nicol / ra / arceus");
-
   switch(player2Choose.toLowerCase()){
 
     case "sargeras":
@@ -241,7 +240,7 @@ const startGame = () => {
         }
 
       //Create 1 slot for Deck + cards remaining
-      $('#player1Hand').append($('<div/>').attr('id', 'player1Deck').text("Cards Remaining: ").css(
+      $('#player1Hand').append($('<div/>').attr('id', 'player1Deck').css(
         {'width': '15%',
         'height': '75%',
         'margin': 'auto',
@@ -261,6 +260,11 @@ const startGame = () => {
         //   'max-width': '100%',
         //   'max-height': '75%'}))
         // }
+        //Add End button for player 1
+        $('#player1Deck').append($('<div>End Turn</div>').css({'height': '20%', 'width': '60%', 'margin': '0 auto', 'border': '1px solid black'}).attr('id', 'end-turn1').on('click', (e) =>{
+          binary++;
+          gameTurn();
+        }));
 
 //PLAYER TWO ----------------------------------->
 
@@ -306,15 +310,20 @@ const startGame = () => {
           'background-color': 'white',
           'max-width': '100%',
           'max-height': '75%'}));
-
         }
 
       //Create 1 slot for Deck + cards remaining
-      $('#player2Hand').append($('<div/>').attr('id', 'player2Deck').text("Cards Remaining: ").css(
+      $('#player2Hand').append($('<div/>').attr('id', 'player2Deck').css(
         {'width': '15%',
         'height': '75%',
         'margin': 'auto',
         'text-align': 'center'}))
+
+      //Add End button to the Deck for Player 2
+      $('#player2Deck').append($('<div>End Turn</div>').css({'height': '40%', 'width': '60%', 'margin': '0 auto', 'border': '1px solid black'}).attr('id', 'end-turn2').on('click', (e) =>{
+        binary--;
+        gameTurn();
+      }));
 
     // Deal Cards Function ---------------------->
     const dealCards = () => {
@@ -342,31 +351,29 @@ const startGame = () => {
 //binary 0 = player 1's turn
 //create Turns
     const gameTurn = () => {
+      console.log(binary);
       if(binary === 0){
+        $('.player2CardSlots').prop('disabled', true);
+        $('#end-turn2').prop('disabled', true);
+
         $('.player1CardSlots').on('click', (e) =>{
           $(e.currentTarget).remove();
           $('#player1Field').append(e.currentTarget).prop('disabled', false);
+          console.log(binary);
         })
 
-        $('.player1CardSlots').on('click', (e) =>{
-          $(e.currentTarget).remove();
-          $('#player1Field').append(e.currentTarget).prop('disabled', true);
-        binary++;
-      })
-
-      } else if(binary === 0){
-        $('.player1CardSlots').on('click', (e) =>{
-          $(e.currentTarget).remove();
-          $('#player2Field').append(e.currentTarget).prop('disabled', true);
-        })
+      } else if(binary === 1){
+        $('.player1CardSlots').prop('disabled', true);
+        $('#end-turn1').prop('disabled', true);
 
         $('.player2CardSlots').on('click', (e) =>{
           $(e.currentTarget).remove();
           $('#player2Field').append(e.currentTarget).prop('disabled', false);
-        binary--;
+          console.log(binary);
       })
-      }
+
     }
+  };
 
 
 startGame(); //Start Game function called
