@@ -184,7 +184,6 @@ const startGame = () => {
 
 };
 
-
 //   //Prompt Players to choose their Hero
 //     //Player 1 Prompt
 //     //Player 2 Prompt
@@ -192,8 +191,6 @@ const startGame = () => {
 //       //shuffle the chosen decks
 //
 // //testing ground
-//   //Player 1 Goes first
-//   //Player 1 can put up minions on the board
 //   //Player 1 can use ability
 //   //Player 1 can end turn
 
@@ -252,16 +249,12 @@ const startGame = () => {
       'height': '50%',
       'display': 'flex'}));
 
-      //Create 5 slots div(slots) for playable cards
-        // for(let i = 0; i < 5; i++){
-        // $('#player1Field').append($('<div/>').addClass( 'player1Slots').css(
-        //   {
-        //   'margin': 'auto',
-        //   'max-width': '100%',
-        //   'max-height': '75%'}))
-        // }
-        //Add End button for player 1
-        $('#player1Deck').append($('<div>End Turn</div>').css({'height': '20%', 'width': '60%', 'margin': '0 auto', 'border': '1px solid black'}).attr('id', 'end-turn1'));
+    //Add End button for player 1
+    $('#player1Deck').append($('<div>End Turn</div>').css(
+      {'height': '20%',
+      'width': '60%',
+      'margin': '0 auto',
+      'border': '1px solid black'}).attr('id', 'end-turn1'));
 
 //PLAYER TWO ----------------------------------->
 
@@ -276,14 +269,6 @@ const startGame = () => {
       {'width': '100%',
       'height': '50%',
       'display': 'flex'}));
-
-      //Create 5 slots div(slots) for playable cards
-      // for(let i = 0; i < 5; i++){
-      // $('#player2Field').append($('<div/>').addClass('player2Slots').css(
-      //   {'width': '10%',
-      //   'height': '100%',
-      //   'margin': 'auto'}));
-      // }
 
     //Create player 2's hand+deck field div(player2Hand)
     $('#player2Container').append($('<div/>').attr('id', 'player2Hand').css(
@@ -323,13 +308,16 @@ const startGame = () => {
     const dealCards = () => {
       for(let i = 0; i < 7; i++){
 
-        $('.player1CardSlots').eq(i).append(player1.deck[i].img).append($('<div>HP: ' + player1.deck[i].hp + '</div>').append($('<div>ATT: ' + player1.deck[i].attack + '</div>')));
+        $('.player1CardSlots').eq(i).append(player1.deck[i].img).append($('<div> HP: ' + player1.deck[i].hp + '<br/>' + 'ATT: ' + player1.deck[i].hp + '</div>'));
         player1.deck.shift();
 
-        $('.player2CardSlots').eq(i).append(player2.deck[i].img).append($('<div>HP: ' + player2.deck[i].hp + '</div>').append($('<div>ATT: ' + player2.deck[i].attack + '</div>')));;
+        $('.player2CardSlots').eq(i).append(player2.deck[i].img).append($('<div> HP: ' + player2.deck[i].hp + '<br/>' + 'ATT: ' + player2.deck[i].hp + '</div>'));
         player2.deck.shift();
+
+
       }
     }
+
 
 //at the end of every attack, checkWin
     const checkWin = () => {
