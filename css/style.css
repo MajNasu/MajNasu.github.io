@@ -1,0 +1,59 @@
+/**{
+  background-color: red;
+}*/
+
+body {
+  margin: 0 auto;
+}
+
+#container {
+  background-color: azure;
+}
+
+#player1Container {
+  background-color: blue;
+}
+
+#player2Container {
+  background-color: purple;
+}
+
+#player1Field {
+  background-color: orange;
+}
+
+#player2Field {
+  background-color: red;
+}
+
+#player1Hand {
+  background-color: black;
+}
+
+#player2Hand {
+  background-color: gray;
+}
+
+.player1Slots {
+  background-color: white;
+}
+
+.player2Slots {
+  background-color: black;
+}
+
+#player1Hero {
+  background-color: gold;
+}
+
+#player1Deck {
+  background-color: grey;
+}
+
+#player2Hero {
+  background-color: gold;
+}
+
+#player2Deck {
+  background-color: grey;
+}
