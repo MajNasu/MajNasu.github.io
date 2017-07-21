@@ -261,10 +261,7 @@ const startGame = () => {
         //   'max-height': '75%'}))
         // }
         //Add End button for player 1
-        $('#player1Deck').append($('<div>End Turn</div>').css({'height': '20%', 'width': '60%', 'margin': '0 auto', 'border': '1px solid black'}).attr('id', 'end-turn1').on('click', (e) =>{
-          binary++;
-          gameTurn();
-        }));
+        $('#player1Deck').append($('<div>End Turn</div>').css({'height': '20%', 'width': '60%', 'margin': '0 auto', 'border': '1px solid black'}).attr('id', 'end-turn1'));
 
 //PLAYER TWO ----------------------------------->
 
@@ -320,10 +317,7 @@ const startGame = () => {
         'text-align': 'center'}))
 
       //Add End button to the Deck for Player 2
-      $('#player2Deck').append($('<div>End Turn</div>').css({'height': '40%', 'width': '60%', 'margin': '0 auto', 'border': '1px solid black'}).attr('id', 'end-turn2').on('click', (e) =>{
-        binary--;
-        gameTurn();
-      }));
+      $('#player2Deck').append($('<div>End Turn</div>').css({'height': '40%', 'width': '60%', 'margin': '0 auto', 'border': '1px solid black'}).attr('id', 'end-turn2'));
 
     // Deal Cards Function ---------------------->
     const dealCards = () => {
@@ -353,24 +347,46 @@ const startGame = () => {
     const gameTurn = () => {
       console.log(binary);
       if(binary === 0){
-        $('.player2CardSlots').prop('disabled', true);
-        $('#end-turn2').prop('disabled', true);
+        $('.player2CardSlots').unbind('click');
+        $('#end-turn2').unbind('click');
+        //Field Cards are unbound here
 
         $('.player1CardSlots').on('click', (e) =>{
           $(e.currentTarget).remove();
-          $('#player1Field').append(e.currentTarget).prop('disabled', false);
-          console.log(binary);
+          $('#player1Field').append(e.currentTarget);
+        });
+
+        //Field cards get ability to choose and attack their enemy
+        $('#player1Field > .player1CardSlots').on('click', (e)=>{
+          console.log("which one u wanna attack?");
+          const currMinionAtt = (e.currentTarget).attack;
+          $('#player2Field > .player2CardSlots').on('click', (e)=>{
+            const targetMinionHP = (e.currentTarget).hp -= currMinionAtt;
+          })
         })
 
+        $('#end-turn1').on('click', (e) =>{
+            binary++;
+            gameTurn();
+        });
+
+
       } else if(binary === 1){
-        $('.player1CardSlots').prop('disabled', true);
-        $('#end-turn1').prop('disabled', true);
+        $('.player1CardSlots').unbind('click');
+        $('#end-turn1').unbind('click');
+        //Field Cards are unbound here
 
         $('.player2CardSlots').on('click', (e) =>{
           $(e.currentTarget).remove();
-          $('#player2Field').append(e.currentTarget).prop('disabled', false);
-          console.log(binary);
-      })
+          $('#player2Field').append(e.currentTarget);
+        });
+
+        //Add
+
+        $('#end-turn2').on('click', (e) =>{
+            binary--;
+            gameTurn();
+        });
 
     }
   };
