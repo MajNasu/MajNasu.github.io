@@ -237,10 +237,7 @@ const startGame = () => {
           'margin': 'auto',
           'background-color': 'white',
           'max-width': '100%',
-          'max-height': '75%'}).on('click', (e) =>{
-            $(e.currentTarget).remove();
-            $('#player1Field').append(e.currentTarget);
-          }))
+          'max-height': '75%'}));
         }
 
       //Create 1 slot for Deck + cards remaining
@@ -308,10 +305,8 @@ const startGame = () => {
           'margin': 'auto',
           'background-color': 'white',
           'max-width': '100%',
-          'max-height': '75%'}).on('click', (e) =>{
-            $(e.currentTarget).remove();
-            $('#player2Field').append(e.currentTarget);
-          }))
+          'max-height': '75%'}));
+
         }
 
       //Create 1 slot for Deck + cards remaining
@@ -344,16 +339,32 @@ const startGame = () => {
       }
     }
 
-//
+//binary 0 = player 1's turn
+//create Turns
     const gameTurn = () => {
       if(binary === 0){
-        $('.player1CardSlots').prop('disabled', false);
-        $('.player2CardSlots').prop('disabled', true);
+        $('.player1CardSlots').on('click', (e) =>{
+          $(e.currentTarget).remove();
+          $('#player1Field').append(e.currentTarget).prop('disabled', false);
+        })
+
+        $('.player1CardSlots').on('click', (e) =>{
+          $(e.currentTarget).remove();
+          $('#player1Field').append(e.currentTarget).prop('disabled', true);
         binary++;
+      })
+
       } else if(binary === 0){
-        $('.player1CardSlots').prop('disabled', true);
-        $('.player2CardSlots').prop('disabled', false);
+        $('.player1CardSlots').on('click', (e) =>{
+          $(e.currentTarget).remove();
+          $('#player2Field').append(e.currentTarget).prop('disabled', true);
+        })
+
+        $('.player2CardSlots').on('click', (e) =>{
+          $(e.currentTarget).remove();
+          $('#player2Field').append(e.currentTarget).prop('disabled', false);
         binary--;
+      })
       }
     }
 
