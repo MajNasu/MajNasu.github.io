@@ -324,7 +324,7 @@ const startGame = () => {
       //     }
       //   }
 
-      player1.
+    
 
 //       const dealCards = () => {
 //       $('.player1CardSlots').eq(0).append(player1.deck[1].img);
