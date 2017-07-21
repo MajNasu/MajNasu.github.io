@@ -180,8 +180,8 @@ const startGame = () => {
         break;
   }
 
+  gameTurn();
   dealCards();
-
 
 };
 
@@ -333,6 +333,29 @@ const startGame = () => {
       }
     }
 
+//at the end of every attack, checkWin
+    const checkWin = () => {
+      if(player1.hp <= 0 && player2.hp <= 0){
+        return "Tie";
+      } else if(player1.hp <= 0){
+        return "Player 2 Wins!";
+      } else if(player2.hp <= 0){
+        return "Player 1 Wins!";
+      }
+    }
+
+//
+    const gameTurn = () => {
+      if(binary === 0){
+        $('.player1CardSlots').prop('disabled', false);
+        $('.player2CardSlots').prop('disabled', true);
+        binary++;
+      } else if(binary === 0){
+        $('.player1CardSlots').prop('disabled', true);
+        $('.player2CardSlots').prop('disabled', false);
+        binary--;
+      }
+    }
 
 
 startGame(); //Start Game function called
