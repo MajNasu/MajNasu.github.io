@@ -307,14 +307,11 @@ const startGame = () => {
     // Deal Cards Function ---------------------->
     const dealCards = () => {
       for(let i = 0; i < 7; i++){
-
         $('.player1CardSlots').eq(i).append(player1.deck[i].img).append($('<div> HP: ' + player1.deck[i].hp + '<br/>' + 'ATT: ' + player1.deck[i].hp + '</div>'));
         player1.deck.shift();
 
         $('.player2CardSlots').eq(i).append(player2.deck[i].img).append($('<div> HP: ' + player2.deck[i].hp + '<br/>' + 'ATT: ' + player2.deck[i].hp + '</div>'));
         player2.deck.shift();
-
-
       }
     }
 
@@ -333,25 +330,22 @@ const startGame = () => {
 //binary 0 = player 1's turn
 //create Turns
     const gameTurn = () => {
-      console.log(binary);
       if(binary === 0){
         $('.player2CardSlots').unbind('click');
         $('#end-turn2').unbind('click');
         //Field Cards are unbound here
 
-        $('.player1CardSlots').on('click', (e) =>{
-          $(e.currentTarget).remove();
-          $('#player1Field').append(e.currentTarget);
+        $('.player1CardSlots').on('click', (z) =>{
+          $(z.currentTarget).remove();
+          $('#player1Field').append(z.currentTarget);
         });
 
         //Field cards get ability to choose and attack their enemy
-        $('#player1Field > .player1CardSlots').on('click', (e)=>{
-          console.log("which one u wanna attack?");
-          const currMinionAtt = (e.currentTarget).attack;
-          $('#player2Field > .player2CardSlots').on('click', (e)=>{
-            const targetMinionHP = (e.currentTarget).hp -= currMinionAtt;
-          })
-        })
+        // $('#player1Field > .player1CardSlots').on('click', (e)=>{
+        //   const player1MinionAtt = prompt("which one u wanna attack?");
+        //   if(player1MinionAtt === )
+        //   })
+        // })
 
         $('#end-turn1').on('click', (e) =>{
             binary++;
