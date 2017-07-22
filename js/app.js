@@ -74,7 +74,7 @@ const startGame = () => {
     case "sargeras":
       player1 = new Player(
         "Sargeras",
-        $('#player1Hero').text("HP: " + 30),
+        30,
         "Dark God of Chaotic Magic, Creator of the Burning Legion", $('#player1Hero').prepend($("<img src='images/hero/sargeras.jpg'/>").css({'width': '100%', 'height': '50%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player1.deck.push(new Card ("Kil'Jaeden the Deceiver", 10, 10, $('<img src="images/cards/kilj.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         for(let i = 0; i < 19; i++){
@@ -86,7 +86,7 @@ const startGame = () => {
     case "nicol":
       player1 = new Player(
         "Nicol Bolas",
-        $('#player1Hero').text("HP: " + 30),
+        30,
         "Forever Serpent, the Horned One, God-Pharaoh of Amonkhet",
         $('#player1Hero').prepend($("<img src='images/hero/nicol.jpg'/>").css({'max-width': '100%', 'max-height': '100%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player1.deck.push(new Card ("Emrakul, the Aeons Torn", 10, 10, $('<img src="images/cards/emrakul.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -99,7 +99,7 @@ const startGame = () => {
     case "ra":
       player1 = new Player(
         "Winged Dragon of Ra",
-        $('#player1Hero').text("HP: " + 30),
+        30,
         "Egyptian Sun God, Almighty Protector of the Sun and Sky",
         $('#player1Hero').prepend($("<img src='images/hero/ra.png'/>").css({'width': '100%', 'height': '45%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player1.deck.push(new Card ("Exodia the Forbidden One", 10, 10, $('<img src="images/cards/exodia.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -112,7 +112,7 @@ const startGame = () => {
     case "arceus":
       player1 = new Player(
         "Arceus",
-        $('#player1Hero').text("HP: " + 30),
+        30,
         "The Original One, God Pokemon",
         $('#player1Hero').prepend($("<img src='images/hero/arceus.png'/>").css({'width': '100%', 'height': '45%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player1.deck.push(new Card ("Mew, the Original", 10, 10, $('<img src="images/cards/mew.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -130,7 +130,7 @@ const startGame = () => {
     case "sargeras":
       player2 = new Player(
         "Sargeras",
-        $('#player2Hero').text("HP: " + 30),
+        30,
         "Dark God of Chaotic Magic, Creator of the Burning Legion", $('#player2Hero').prepend($("<img src='images/hero/sargeras.jpg'/>").css({'max-width': '100%', 'max-height': '75%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player2.deck.push(new Card ("Kil'Jaeden the Deceiver", 10, 10, $('<img src="images/cards/kilj.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         for(let i = 0; i < 19; i++){
@@ -142,7 +142,7 @@ const startGame = () => {
     case "nicol":
       player2 = new Player(
         "Nicol Bolas",
-        $('#player2Hero').text("HP: " + 30),
+        30,
         "Forever Serpent, the Horned One, God-Pharaoh of Amonkhet",
         $('#player2Hero').prepend($("<img src='images/hero/nicol.jpg'/>").css({'max-width': '100%', 'max-height': '100%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player2.deck.push(new Card ("Emrakul, the Aeons Torn", 10, 10, $('<img src="images/cards/emrakul.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -155,7 +155,7 @@ const startGame = () => {
     case "ra":
       player2 = new Player(
         "Winged Dragon of Ra",
-        $('#player2Hero').text("HP: " + 30),
+        30,
         "Egyptian Sun God, Almighty Protector of the Sun and Sky",
         $('#player2Hero').prepend($("<img src='images/hero/ra.png'/>").css({'width': '100%', 'height': '45%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player2.deck.push(new Card ("Exodia the Forbidden One", 10, 10, $('<img src="images/cards/exodia.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -168,7 +168,7 @@ const startGame = () => {
     case "arceus":
       player2 = new Player(
         "Arceus",
-        $('#player2Hero').text("HP: " + 30),
+        30,
         "The Original One, God Pokemon",
         $('#player2Hero').prepend($("<img src='images/hero/arceus.png'/>").css({'width': '100%', 'height': '45%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player2.deck.push(new Card ("Mew, the Original", 10, 10, $('<img src="images/cards/mew.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -327,6 +327,12 @@ const startGame = () => {
       }
     }
 
+
+//Field minion interaction
+  const minionInteraction = () => {
+
+  }
+
 //binary 0 = player 1's turn
 //create Turns
     const gameTurn = () => {
@@ -341,11 +347,15 @@ const startGame = () => {
         });
 
         //Field cards get ability to choose and attack their enemy
-        // $('#player1Field > .player1CardSlots').on('click', (e)=>{
-        //   const player1MinionAtt = prompt("which one u wanna attack?");
-        //   if(player1MinionAtt === )
-        //   })
-        // })
+        $('#player1Field > .player1CardSlots').on('click', (e)=>{
+          console.log(('e.currentTarget > div'));
+          $('#player2Field > .player2CardSlots').on('click', (m) =>{
+            console.log('hello');
+          //   $(m.currentTarget).hp -= $(e.currentTarget).attack;
+          //   if(m.currentTarget).hp <= 0){}
+          // })
+        })
+      });
 
         $('#end-turn1').on('click', (e) =>{
             binary++;
