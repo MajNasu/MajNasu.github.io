@@ -74,8 +74,8 @@ const startGame = () => {
     case "sargeras":
       player1 = new Player(
         "Sargeras",
-        30,
-        "Dark God of Chaotic Magic, Creator of the Burning Legion", $('#player1Hero').prepend($("<img src='images/hero/sargeras.jpg'/>").css({'width': '100%', 'height': '50%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
+        $('#player1Hero').text("HP: " + 30),
+         "Dark God of Chaotic Magic, Creator of the Burning Legion", $('#player1Hero').prepend($("<img src='images/hero/sargeras.jpg'/>").css({'width': '100%', 'height': '50%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player1.deck.push(new Card ("Kil'Jaeden the Deceiver", 10, 10, $('<img src="images/cards/kilj.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         for(let i = 0; i < 19; i++){
           player1.deck.push(new Card ("Voidwalker", 1, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -86,7 +86,7 @@ const startGame = () => {
     case "nicol":
       player1 = new Player(
         "Nicol Bolas",
-        30,
+        $('#player1Hero').text("HP: " + 30),
         "Forever Serpent, the Horned One, God-Pharaoh of Amonkhet",
         $('#player1Hero').prepend($("<img src='images/hero/nicol.jpg'/>").css({'max-width': '100%', 'max-height': '100%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player1.deck.push(new Card ("Emrakul, the Aeons Torn", 10, 10, $('<img src="images/cards/emrakul.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -99,7 +99,7 @@ const startGame = () => {
     case "ra":
       player1 = new Player(
         "Winged Dragon of Ra",
-        30,
+        $('#player1Hero').text("HP: " + 30),
         "Egyptian Sun God, Almighty Protector of the Sun and Sky",
         $('#player1Hero').prepend($("<img src='images/hero/ra.png'/>").css({'width': '100%', 'height': '45%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player1.deck.push(new Card ("Exodia the Forbidden One", 10, 10, $('<img src="images/cards/exodia.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -112,7 +112,7 @@ const startGame = () => {
     case "arceus":
       player1 = new Player(
         "Arceus",
-        30,
+        $('#player1Hero').text("HP: " + 30),
         "The Original One, God Pokemon",
         $('#player1Hero').prepend($("<img src='images/hero/arceus.png'/>").css({'width': '100%', 'height': '45%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player1.deck.push(new Card ("Mew, the Original", 10, 10, $('<img src="images/cards/mew.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -130,7 +130,7 @@ const startGame = () => {
     case "sargeras":
       player2 = new Player(
         "Sargeras",
-        30,
+        $('#player2Hero').text("HP: " + 30),
         "Dark God of Chaotic Magic, Creator of the Burning Legion", $('#player2Hero').prepend($("<img src='images/hero/sargeras.jpg'/>").css({'max-width': '100%', 'max-height': '75%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player2.deck.push(new Card ("Kil'Jaeden the Deceiver", 10, 10, $('<img src="images/cards/kilj.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         for(let i = 0; i < 19; i++){
@@ -142,7 +142,7 @@ const startGame = () => {
     case "nicol":
       player2 = new Player(
         "Nicol Bolas",
-        30,
+        $('#player2Hero').text("HP: " + 30),
         "Forever Serpent, the Horned One, God-Pharaoh of Amonkhet",
         $('#player2Hero').prepend($("<img src='images/hero/nicol.jpg'/>").css({'max-width': '100%', 'max-height': '100%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player2.deck.push(new Card ("Emrakul, the Aeons Torn", 10, 10, $('<img src="images/cards/emrakul.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -155,7 +155,7 @@ const startGame = () => {
     case "ra":
       player2 = new Player(
         "Winged Dragon of Ra",
-        30,
+        $('#player2Hero').text("HP: " + 30),
         "Egyptian Sun God, Almighty Protector of the Sun and Sky",
         $('#player2Hero').prepend($("<img src='images/hero/ra.png'/>").css({'width': '100%', 'height': '45%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player2.deck.push(new Card ("Exodia the Forbidden One", 10, 10, $('<img src="images/cards/exodia.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -168,7 +168,7 @@ const startGame = () => {
     case "arceus":
       player2 = new Player(
         "Arceus",
-        30,
+        $('#player2Hero').text("HP: " + 30),
         "The Original One, God Pokemon",
         $('#player2Hero').prepend($("<img src='images/hero/arceus.png'/>").css({'width': '100%', 'height': '45%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player2.deck.push(new Card ("Mew, the Original", 10, 10, $('<img src="images/cards/mew.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -307,10 +307,10 @@ const startGame = () => {
     // Deal Cards Function ---------------------->
     const dealCards = () => {
       for(let i = 0; i < 7; i++){
-        $('.player1CardSlots').eq(i).append(player1.deck[i].img).append($('<div> HP: ' + player1.deck[i].hp + '<br/>' + 'ATT: ' + player1.deck[i].hp + '</div>'));
+        $('.player1CardSlots').eq(i).append(player1.deck[i].img).append($('<div>' + player1.deck[i].hp + '</div>')).append($('<div>' + player1.deck[i].attack + '</div>'));
         player1.deck.shift();
 
-        $('.player2CardSlots').eq(i).append(player2.deck[i].img).append($('<div> HP: ' + player2.deck[i].hp + '<br/>' + 'ATT: ' + player2.deck[i].hp + '</div>'));
+        $('.player2CardSlots').eq(i).append(player2.deck[i].img).append($('<div>' + player2.deck[i].hp + '</div>')).append($('<div>' + player2.deck[i].attack + '</div>'));
         player2.deck.shift();
       }
     }
@@ -329,9 +329,7 @@ const startGame = () => {
 
 
 //Field minion interaction
-  const minionInteraction = () => {
 
-  }
 
 //binary 0 = player 1's turn
 //create Turns
@@ -346,16 +344,27 @@ const startGame = () => {
           $('#player1Field').append(z.currentTarget);
         });
 
-        //Field cards get ability to choose and attack their enemy
+        //Field cards get ability to choose and attack their enemy MINION
         $('#player1Field > .player1CardSlots').on('click', (e)=>{
-          console.log(('e.currentTarget > div'));
+          console.log("Who do you want to attack");
           $('#player2Field > .player2CardSlots').on('click', (m) =>{
-            console.log('hello');
-          //   $(m.currentTarget).hp -= $(e.currentTarget).attack;
-          //   if(m.currentTarget).hp <= 0){}
-          // })
+            //target receives damage
+          $(m.currentTarget).children(1).text() = $(m.currentTarget).children(1).text() - $(e.currentTarget).children(2).text();
+
+            //attacker receives damage
+          $(e.currentTarget).children(2).text() -= $(m.currentTarget).children(1).text();
+            if($(m.currentTarget).children(1).text() <= 0 && $(e.currentTarget.children(2) <= 0)){
+              m.currentTarget.remove();
+              e.currentTarget.remove();
+            } else if($(m.currentTarget).children(1).text() <= 0){
+              m.currentTarget.remove();
+            } else if($(e.currentTarget).children(2).text() <= 0){
+              e.currentTarget.remove();
+            }
         })
       });
+
+        checkWin();
 
         $('#end-turn1').on('click', (e) =>{
             binary++;
@@ -373,7 +382,7 @@ const startGame = () => {
           $('#player2Field').append(e.currentTarget);
         });
 
-        //Add
+        checkWin();
 
         $('#end-turn2').on('click', (e) =>{
             binary--;
