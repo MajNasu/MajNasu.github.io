@@ -307,10 +307,10 @@ const startGame = () => {
     // Deal Cards Function ---------------------->
     const dealCards = () => {
       for(let i = 0; i < 7; i++){
-        $('.player1CardSlots').eq(i).append(player1.deck[i].img).append($('<div>' + player1.deck[i].hp + '</div>')).append($('<div>' + player1.deck[i].attack + '</div>'));
+        $('.player1CardSlots').eq(i).append(player1.deck[i].img).append($('<div>' + player1.deck[i].hp + '</div>').attr('id', 'hp')).append($('<div>' + player1.deck[i].attack + '</div>').attr('id', 'attack'));
         player1.deck.shift();
 
-        $('.player2CardSlots').eq(i).append(player2.deck[i].img).append($('<div>' + player2.deck[i].hp + '</div>')).append($('<div>' + player2.deck[i].attack + '</div>'));
+        $('.player2CardSlots').eq(i).append(player2.deck[i].img).append($('<div>' + player2.deck[i].hp + '</div>').attr('id', 'hp')).append($('<div>' + player2.deck[i].attack + '</div>').attr('id', 'attack'));
         player2.deck.shift();
       }
     }
@@ -347,18 +347,21 @@ const startGame = () => {
         //Field cards get ability to choose and attack their enemy MINION
         $('#player1Field > .player1CardSlots').on('click', (e)=>{
           console.log("Who do you want to attack");
+          console.log($(e.currentTarget).children(2).val());
           $('#player2Field > .player2CardSlots').on('click', (m) =>{
             //target receives damage
-          $(m.currentTarget).children(1).text() = $(m.currentTarget).children(1).text() - $(e.currentTarget).children(2).text();
+          console.log("I wanna attack this guy");
+          $(m.currentTarget).children(1).val() = $(m.currentTarget).children(1).val() -
+           $(e.currentTarget).children(2).val();
 
             //attacker receives damage
-          $(e.currentTarget).children(2).text() -= $(m.currentTarget).children(1).text();
-            if($(m.currentTarget).children(1).text() <= 0 && $(e.currentTarget.children(2) <= 0)){
+          $(e.currentTarget).children(2).val() -= $(m.currentTarget).children(1).val();
+            if($(m.currentTarget).children(1).val() <= 0 && $(e.currentTarget.children(2).val() <= 0)){
               m.currentTarget.remove();
               e.currentTarget.remove();
-            } else if($(m.currentTarget).children(1).text() <= 0){
+            } else if($(m.currentTarget).children(1).val() <= 0){
               m.currentTarget.remove();
-            } else if($(e.currentTarget).children(2).text() <= 0){
+            } else if($(e.currentTarget).children(2).val() <= 0){
               e.currentTarget.remove();
             }
         })
