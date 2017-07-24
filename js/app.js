@@ -36,45 +36,44 @@ let binary = 0;
     }
   }
 
-//Sargeras, Nicol, Ra, Arceus order
+
 //Create 1 legendary per character deck.
-  const kiljaeden = new Legendary (
-  "Kil'Jaeden the Deceiver", 10, 10, $('<img src="images/cards/kilj.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-  const emra = new Legendary ("Emrakul, the Aeons Torn", 10, 10, $('<img        src="images/cards/emrakul.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-  const exodia = new Legendary ("Exodia the Forbidden One", 10, 10, $('<img     src="images/cards/exodia.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-  const mew = new Legendary ("Mew, the Original", 10, 10, $('<img src="images/cards/mew.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-//Create 4 epics per character deck.
-  const blueE3 = new Card ("3-Headed Blue Eyes White Dragon", 7, 7, $('<img src="images/cards/blueeyes3.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-  const phage = new Card ("Phage the Untouchable", 7, 7, $('<img src="images/cards/phage.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-  const archimonde = new Card ("Archimonde", 7, 7, $('<img src="images/cards/archimonde.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-  const celebi = new Card ("Celebi", 7, 7, $('<img src="images/cards/celebi.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-//Create 5 Rares per character deck.
-  const pitlord = new Card ("Pit Lord", 4, 4, $('<img src="images/cards/pitlord.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-  const crosis = new Card ("Crosis", 4, 4, $('<img src="images/cards/crosis.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-  const blueE = new Card ("Blue Eyes White Dragon", 4, 4, $('<img src="images/cards/blueeyes.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-  const zapdos = new Card ("Zapdos", 4, 4, $('<img src="images/cards/zapdos.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-//Create 10 commons per character deck.
-  const voidwalker = new Card ("Voidwalker", 2, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-  const undead = new Card ("Undead Warchief", 2, 2, $('<img src="images/cards/undeadwarchief.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-  const darkmagician = new Card ("Dark Magician", 2, 2, $('<img src="images/cards/darkmagician.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-  const pikachu = new Card ("Pikachu", 2, 2, $('<img src="images/cards/pikachu.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-
-
+//   const kiljaeden = new Legendary (
+//   "Kil'Jaeden the Deceiver", 10, 10, $('<img src="images/cards/kilj.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+//   const emra = new Legendary ("Emrakul, the Aeons Torn", 10, 10, $('<img        src="images/cards/emrakul.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+//   const exodia = new Legendary ("Exodia the Forbidden One", 10, 10, $('<img     src="images/cards/exodia.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+//   const mew = new Legendary ("Mew, the Original", 10, 10, $('<img src="images/cards/mew.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+// //Create 4 epics per character deck.
+//   const blueE3 = new Card ("3-Headed Blue Eyes White Dragon", 7, 7, $('<img src="images/cards/blueeyes3.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+//   const phage = new Card ("Phage the Untouchable", 7, 7, $('<img src="images/cards/phage.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+//   const archimonde = new Card ("Archimonde", 7, 7, $('<img src="images/cards/archimonde.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+//   const celebi = new Card ("Celebi", 7, 7, $('<img src="images/cards/celebi.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+// //Create 5 Rares per character deck.
+//   const pitlord = new Card ("Pit Lord", 4, 4, $('<img src="images/cards/pitlord.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+//   const crosis = new Card ("Crosis", 4, 4, $('<img src="images/cards/crosis.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+//   const blueE = new Card ("Blue Eyes White Dragon", 4, 4, $('<img src="images/cards/blueeyes.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+//   const zapdos = new Card ("Zapdos", 4, 4, $('<img src="images/cards/zapdos.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+// //Create 10 commons per character deck.
+//   const voidwalker = new Card ("Voidwalker", 2, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+//   const undead = new Card ("Undead Warchief", 2, 2, $('<img src="images/cards/undeadwarchief.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+//   const darkmagician = new Card ("Dark Magician", 2, 2, $('<img src="images/cards/darkmagician.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
+//   const pikachu = new Card ("Pikachu", 2, 2, $('<img src="images/cards/pikachu.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//
 
 //Shuffle decks using Durstenfeld + Fisher-Yates shuffle
   const shuffle = (arr) => {
@@ -114,6 +113,9 @@ const startGame = () => {
           player1.deck.push(new Card ("Archimonde", 7, 7, $('<img src="images/cards/archimonde.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
 
+        $('#player1Deck').css(
+          {'background-image': 'url("images/cards/hearthstoneBACK.png")', 'background-size': '100% 100%'});
+
         shuffle(player1.deck);
       break;
 
@@ -137,6 +139,9 @@ const startGame = () => {
         for(let z = 0; z < 4; z++){
           player1.deck.push(new Card ("Phage the Untouchable", 7, 7, $('<img src="images/cards/phage.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
+
+        $('#player1Deck').css(
+          {'background-image': 'url("images/cards/magicBACK.png")', 'background-size': '100% 100%'});
 
         shuffle(player1.deck);
       break;
@@ -162,6 +167,10 @@ const startGame = () => {
           player1.deck.push(new Card ("3-Headed Blue Eyes White Dragon", 7, 7, $('<img src="images/cards/blueeyes3.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
 
+        $('#player1Deck').css(
+          {'background-image': 'url("images/cards/yugiohBACK.png")',
+          'background-size': '100% 100%'});
+
         shuffle(player1.deck);
       break;
 
@@ -184,6 +193,10 @@ const startGame = () => {
         for(let z = 0; z < 4; z++){
           player1.deck.push(new Card ("Celebi", 7, 7, $('<img src="images/cards/celebi.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
+
+        $('#player1Deck').css(
+          {'background-image': 'url("images/cards/pokemonBACK.png")',
+          'background-size': '100% 100%'});
 
         shuffle(player1.deck);
       break;
@@ -213,6 +226,9 @@ const startGame = () => {
           player2.deck.push(new Card ("Archimonde", 7, 7, $('<img src="images/cards/archimonde.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
 
+        $('#player2Deck').css(
+          {'background-image': 'url("images/cards/hearthstoneBACK.png")', 'background-size': '100% 100%'});
+
         shuffle(player2.deck);
       break;
 
@@ -236,6 +252,9 @@ const startGame = () => {
         for(let z = 0; z < 4; z++){
           player2.deck.push(new Card ("Phage the Untouchable", 7, 7, $('<img src="images/cards/phage.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
+
+        $('#player2Deck').css(
+          {'background-image': 'url("images/cards/magicBACK.png")', 'background-size': '100% 100%'});
 
         shuffle(player2.deck);
       break;
@@ -261,6 +280,8 @@ const startGame = () => {
           player2.deck.push(new Card ("3-Headed Blue Eyes White Dragon", 7, 7, $('<img src="images/cards/blueeyes3.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
 
+        $('#player2Deck').css(
+          {'background-image': 'url("images/cards/yugiohBACK.png")', 'background-size': '100% 100%'});
 
         shuffle(player2.deck);
       break;
@@ -285,6 +306,10 @@ const startGame = () => {
         for(let z = 0; z < 4; z++){
           player2.deck.push(new Card ("Celebi", 7, 7, $('<img src="images/cards/celebi.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
+
+        $('#player2Deck').css(
+          {'background-image': 'url("images/cards/pokemonBACK.png")',
+          'background-size': '100% 100%'});
 
         shuffle(player2.deck);
         break;

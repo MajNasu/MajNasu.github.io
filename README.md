@@ -23,8 +23,10 @@ KNOWN BUGS:
 
 THINGS TO ADD:
 1. More cards, currently 1 unique card per deck, 19 lemmings otherwise.
+-added
 
 2. Specific card backs for each hero from their respective games.
+-added
 
 3. Hero abilities
 

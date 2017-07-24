@@ -96,10 +96,9 @@
 }
 
 #player1Deck {
-  background-color: grey;
   border: 4px solid black;
   border-radius: 10px;
-
+  color: white;
 }
 
 #player2Hero {
@@ -110,9 +109,9 @@
 }
 
 #player2Deck {
-  background-color: grey;
   border: 4px solid black;
   border-radius: 10px;
+  color: white;
 }
 
 /* taken from http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video*/
