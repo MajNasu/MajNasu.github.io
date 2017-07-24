@@ -17,6 +17,10 @@ KNOWN BUGS:
 2. Drawing cards! Because the hand cards were created as 7 divs with the card info being appended, constructing a draw card function is a lot more difficult than naturally believed.
 -fixed, each player can only draw 1 card per turn.
 
+3. Can't play the card that was drawn in the same turn. Maybe I'll just say it's an intended mechanic of the game.
+
+4. Upon drawing a card, a random card in your hand/field may lose its image for some reason.
+
 THINGS TO ADD:
 1. More cards, currently 1 unique card per deck, 19 lemmings otherwise.
 

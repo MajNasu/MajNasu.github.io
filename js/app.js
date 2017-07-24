@@ -380,7 +380,6 @@ const player2Draw = () => {
     if(binary === 0){
       $('#player2Hand > .player2CardSlots').off('click');
       $('#end-turn2').off('click');
-      $('#drawCard2').off('click');
 
       $('#drawCard1').on('click', ()=> {
         player1Draw();
@@ -439,7 +438,6 @@ const player2Draw = () => {
     } else if(binary === 1){
       $('#player1Hand > .player1CardSlots').off('click');
       $('#end-turn1').off('click');
-      $('#drawCard1').off('click');
 
       $('#drawCard2').on('click', ()=> {
         player2Draw();
