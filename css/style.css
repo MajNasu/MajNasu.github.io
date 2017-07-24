@@ -2,8 +2,36 @@
   background-color: red;
 }*/
 
-body {
-  margin: 0 auto;
+*{
+  text-align: center;
+  font-family: fantasy;
+}
+
+
+#hp {
+  color: red;
+  font-size: 27px;
+  float: right;
+}
+
+#attack {
+  color: steel;
+  font-size: 27px;
+  float: left;
+}
+
+#player1Hero > #hp {
+  color:black;
+  text-align:center;
+}
+
+#player2Hero > #hp {
+  color: black;
+  text-align:center;
+}
+
+#end-turn1 {
+  padding: 10px;
 }
 
 /*#container {
