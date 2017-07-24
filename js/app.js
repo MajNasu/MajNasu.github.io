@@ -73,7 +73,6 @@ let binary = 0;
 //   const darkmagician = new Card ("Dark Magician", 2, 2, $('<img src="images/cards/darkmagician.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
 //
 //   const pikachu = new Card ("Pikachu", 2, 2, $('<img src="images/cards/pikachu.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
-//
 
 //Shuffle decks using Durstenfeld + Fisher-Yates shuffle
   const shuffle = (arr) => {
@@ -468,25 +467,6 @@ const startGame = () => {
       }
     }
 
-//Draw Cards for each player
-//     const player1Draw = () => {
-//       $('#player1Hand').append($('<div/>').addClass('player1CardSlots').css(
-//         {'width': '10%',
-//         'height': '75%',
-//         'margin': 'auto',
-//         'background-color': 'white',
-//         'max-width': '100%',
-//         'max-height': '75%'}));
-//
-//       $('.player1CardSlots').append(player1.deck[0].img).append($('<div>' + player1.deck[0].hp + '</div>').attr('id', 'hp')).append($('<div>' + player1.deck[0].attack + '</div>').attr('id', 'attack'));
-//       player1.deck.shift();
-// }
-//
-//     const player2Draw = () => {
-//       $('#player1Hand').append(player2.deck[0].img).append($('<div>' + player2.deck[0].hp + '</div>').attr('id', 'hp')).append($('<div>' + player2.deck[0].attack + '</div>').attr('id', 'attack'));
-//       player2.deck.shift();
-//     }
-
 // Player 1 Draw
   const player1Draw = () => {
     $('.player1CardSlots + #player1Deck').before($('<div/>').addClass('player1CardSlots').css(
@@ -633,7 +613,6 @@ const player2Draw = () => {
         });
     }
   };
-
 
 startGame(); //Start Game function called
 

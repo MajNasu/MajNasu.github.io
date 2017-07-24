@@ -1,7 +1,6 @@
-PLAY HERE: https://majnasu.github.io/
+## PLAY HERE: https://majnasu.github.io/
 
-Welcome to Ultimate Card Battle!
-
+#### Welcome to Ultimate Card Battle!
 If you've ever played a trading card game, or more commonly known as TCG, you'll have some vague familiarity with this game. The point of the game is to destroy the enemy hero by depleting his/her life points.
 
 Upon landing the page, two players are prompted to choose their hero. Each hero provides their own respective decks from their universe. After picking, players may click on the cards in their hand to put them into play.
@@ -10,7 +9,7 @@ Once the minion cards are in play, the player who possesses the minion card may 
 
 Players lose when their HP reaches zero.
 
-KNOWN BUGS:
+####KNOWN BUGS
 1. A minion can attack another minion and die in the process. Though dead, the attacking player may keep clicking on opponent minions/hero and continuously deplete HP. (Possible fix: unbind click event after attacking minion is removed.)
 -fixed, each minion can only attack up to one target per turn.
 
