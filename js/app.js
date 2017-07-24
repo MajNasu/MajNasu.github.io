@@ -36,6 +36,7 @@ let binary = 0;
     }
   }
 
+//Sargeras, Nicol, Ra, Arceus order
 //Create 1 legendary per character deck.
   const kiljaeden = new Legendary (
   "Kil'Jaeden the Deceiver", 10, 10, $('<img src="images/cards/kilj.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
@@ -46,8 +47,34 @@ let binary = 0;
 
   const mew = new Legendary ("Mew, the Original", 10, 10, $('<img src="images/cards/mew.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
 
-//Create neutral cards (19 of these for testing)
-  const voidwalker = new Card ("Voidwalker", 1, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+//Create 4 epics per character deck.
+  const blueE3 = new Card ("3-Headed Blue Eyes White Dragon", 7, 7, $('<img src="images/cards/blueeyes3.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+
+  const phage = new Card ("Phage the Untouchable", 7, 7, $('<img src="images/cards/phage.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+
+  const archimonde = new Card ("Archimonde", 7, 7, $('<img src="images/cards/archimonde.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+
+  const celebi = new Card ("Celebi", 7, 7, $('<img src="images/cards/celebi.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+
+//Create 5 Rares per character deck.
+  const pitlord = new Card ("Pit Lord", 4, 4, $('<img src="images/cards/pitlord.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+
+  const crosis = new Card ("Crosis", 4, 4, $('<img src="images/cards/crosis.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+
+  const blueE = new Card ("Blue Eyes White Dragon", 4, 4, $('<img src="images/cards/blueeyes.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+
+  const zapdos = new Card ("Zapdos", 4, 4, $('<img src="images/cards/zapdos.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+
+//Create 10 commons per character deck.
+  const voidwalker = new Card ("Voidwalker", 2, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+
+  const undead = new Card ("Undead Warchief", 2, 2, $('<img src="images/cards/undeadwarchief.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+
+  const darkmagician = new Card ("Dark Magician", 2, 2, $('<img src="images/cards/darkmagician.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+
+  const pikachu = new Card ("Pikachu", 2, 2, $('<img src="images/cards/pikachu.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'}));
+
+
 
 //Shuffle decks using Durstenfeld + Fisher-Yates shuffle
   const shuffle = (arr) => {
@@ -72,10 +99,21 @@ const startGame = () => {
         "Sargeras",
         $('#player1Hero').append($('<div>30</div>').attr('id', 'hp')),
          "Dark God of Chaotic Magic, Creator of the Burning Legion", $('#player1Hero').prepend($("<img src='images/hero/sargeras.jpg'/>").css({'max-width': '100%', 'max-height': '100%','height': '80%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
+
         player1.deck.push(new Card ("Kil'Jaeden the Deceiver", 10, 10, $('<img src="images/cards/kilj.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
-        for(let i = 0; i < 19; i++){
-          player1.deck.push(new Card ("Voidwalker", 1, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+
+        for(let i = 0; i < 10; i++){
+          player1.deck.push(new Card ("Voidwalker", 2, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
+
+        for(let j = 0; j < 5; j++){
+          player1.deck.push(new Card ("Pit Lord", 4, 4, $('<img src="images/cards/pitlord.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
+        for(let z = 0; z < 4; z++){
+          player1.deck.push(new Card ("Archimonde", 7, 7, $('<img src="images/cards/archimonde.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
         shuffle(player1.deck);
       break;
 
@@ -85,10 +123,21 @@ const startGame = () => {
         $('#player1Hero').append($('<div>30</div>').attr('id', 'hp')),
         "Forever Serpent, the Horned One, God-Pharaoh of Amonkhet",
         $('#player1Hero').prepend($("<img src='images/hero/nicol.jpg'/>").css({'max-width': '100%', 'max-height': '100%','height': '80%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
+
         player1.deck.push(new Card ("Emrakul, the Aeons Torn", 10, 10, $('<img src="images/cards/emrakul.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
-        for(let i = 0; i < 19; i++){
-          player1.deck.push(new Card ("Voidwalker", 1, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+
+        for(let i = 0; i < 10; i++){
+          player1.deck.push(new Card ("Undead Warchief", 2, 2, $('<img src="images/cards/undeadwarchief.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
+
+        for(let j = 0; j < 5; j++){
+          player1.deck.push(new Card ("Crosis", 4, 4, $('<img src="images/cards/crosis.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
+        for(let z = 0; z < 4; z++){
+          player1.deck.push(new Card ("Phage the Untouchable", 7, 7, $('<img src="images/cards/phage.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
         shuffle(player1.deck);
       break;
 
@@ -98,10 +147,21 @@ const startGame = () => {
         $('#player1Hero').append($('<div>30</div>').attr('id', 'hp')),
         "Egyptian Sun God, Almighty Protector of the Sun and Sky",
         $('#player1Hero').prepend($("<img src='images/hero/ra.png'/>").css({'width': '100%', 'height': '80%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
+
         player1.deck.push(new Card ("Exodia the Forbidden One", 10, 10, $('<img src="images/cards/exodia.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
-        for(let i = 0; i < 19; i++){
-          player1.deck.push(new Card ("Voidwalker", 1, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+
+        for(let i = 0; i < 10; i++){
+          player1.deck.push(new Card ("Dark Magician", 2, 2, $('<img src="images/cards/darkmagician.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
+
+        for(let j = 0; j < 5; j++){
+          player1.deck.push(new Card ("Blue Eyes White Dragon", 4, 4, $('<img src="images/cards/blueeyes.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
+        for(let z = 0; z < 4; z++){
+          player1.deck.push(new Card ("3-Headed Blue Eyes White Dragon", 7, 7, $('<img src="images/cards/blueeyes3.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
         shuffle(player1.deck);
       break;
 
@@ -112,9 +172,19 @@ const startGame = () => {
         "The Original One, God Pokemon",
         $('#player1Hero').prepend($("<img src='images/hero/arceus.png'/>").css({'max-width': '100%', 'max-height': '100%', 'height': '80%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player1.deck.push(new Card ("Mew, the Original", 10, 10, $('<img src="images/cards/mew.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
-        for(let i = 0; i < 19; i++){
-          player1.deck.push(new Card ("Voidwalker", 1, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+
+        for(let i = 0; i < 10; i++){
+          player1.deck.push(new Card ("Pikachu", 2, 2, $('<img src="images/cards/pikachu.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
+
+        for(let j = 0; j < 5; j++){
+          player1.deck.push(new Card ("Zapdos", 4, 4, $('<img src="images/cards/zapdos.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
+        for(let z = 0; z < 4; z++){
+          player1.deck.push(new Card ("Celebi", 7, 7, $('<img src="images/cards/celebi.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
         shuffle(player1.deck);
       break;
   }
@@ -128,10 +198,21 @@ const startGame = () => {
         "Sargeras",
         $('#player2Hero').append($('<div>30</div>').attr('id', 'hp')),
         "Dark God of Chaotic Magic, Creator of the Burning Legion", $('#player2Hero').prepend($("<img src='images/hero/sargeras.jpg'/>").css({'max-width': '100%', 'max-height': '100%', 'height': '80%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
+
         player2.deck.push(new Card ("Kil'Jaeden the Deceiver", 10, 10, $('<img src="images/cards/kilj.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
-        for(let i = 0; i < 19; i++){
-          player2.deck.push(new Card ("Voidwalker", 1, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+
+        for(let i = 0; i < 10; i++){
+          player2.deck.push(new Card ("Voidwalker", 2, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
+
+        for(let j = 0; j < 5; j++){
+          player2.deck.push(new Card ("Pit Lord", 4, 4, $('<img src="images/cards/pitlord.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
+        for(let z = 0; z < 4; z++){
+          player2.deck.push(new Card ("Archimonde", 7, 7, $('<img src="images/cards/archimonde.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
         shuffle(player2.deck);
       break;
 
@@ -141,10 +222,21 @@ const startGame = () => {
         $('#player2Hero').append($('<div>30</div>').attr('id', 'hp')),
         "Forever Serpent, the Horned One, God-Pharaoh of Amonkhet",
         $('#player2Hero').prepend($("<img src='images/hero/nicol.jpg'/>").css({'max-width': '100%', 'max-height': '100%', 'height': '80%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
+
         player2.deck.push(new Card ("Emrakul, the Aeons Torn", 10, 10, $('<img src="images/cards/emrakul.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
-        for(let i = 0; i < 19; i++){
-          player2.deck.push(new Card ("Voidwalker", 1, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+
+        for(let i = 0; i < 10; i++){
+          player2.deck.push(new Card ("Undead Warchief", 2, 2, $('<img src="images/cards/undeadwarchief.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
+
+        for(let j = 0; j < 5; j++){
+          player2.deck.push(new Card ("Crosis", 4, 4, $('<img src="images/cards/crosis.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
+        for(let z = 0; z < 4; z++){
+          player2.deck.push(new Card ("Phage the Untouchable", 7, 7, $('<img src="images/cards/phage.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
         shuffle(player2.deck);
       break;
 
@@ -154,10 +246,22 @@ const startGame = () => {
         $('#player2Hero').append($('<div>30</div>').attr('id', 'hp')),
         "Egyptian Sun God, Almighty Protector of the Sun and Sky",
         $('#player2Hero').prepend($("<img src='images/hero/ra.png'/>").css({'width': '100%', 'height': '80%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
+
         player2.deck.push(new Card ("Exodia the Forbidden One", 10, 10, $('<img src="images/cards/exodia.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
-        for(let i = 0; i < 19; i++){
-          player2.deck.push(new Card ("Voidwalker", 1, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+
+        for(let i = 0; i < 10; i++){
+          player2.deck.push(new Card ("Dark Magician", 2, 2, $('<img src="images/cards/darkmagician.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
+
+        for(let j = 0; j < 5; j++){
+          player2.deck.push(new Card ("Blue Eyes White Dragon", 4, 4, $('<img src="images/cards/blueeyes.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
+        for(let z = 0; z < 4; z++){
+          player2.deck.push(new Card ("3-Headed Blue Eyes White Dragon", 7, 7, $('<img src="images/cards/blueeyes3.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
+
         shuffle(player2.deck);
       break;
 
@@ -167,10 +271,21 @@ const startGame = () => {
         $('#player2Hero').append($('<div>30</div>').attr('id', 'hp')),
         "The Original One, God Pokemon",
         $('#player2Hero').prepend($("<img src='images/hero/arceus.png'/>").css({'max-width': '100%', 'max-height': '100%', 'height': '80%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
+
         player2.deck.push(new Card ("Mew, the Original", 10, 10, $('<img src="images/cards/mew.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
-        for(let i = 0; i < 19; i++){
-          player2.deck.push(new Card ("Voidwalker", 1, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+
+        for(let i = 0; i < 10; i++){
+          player2.deck.push(new Card ("Pikachu", 2, 2, $('<img src="images/cards/pikachu.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         };
+
+        for(let j = 0; j < 5; j++){
+          player2.deck.push(new Card ("Zapdos", 4, 4, $('<img src="images/cards/zapdos.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
+        for(let z = 0; z < 4; z++){
+          player2.deck.push(new Card ("Celebi", 7, 7, $('<img src="images/cards/celebi.png"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
+        };
+
         shuffle(player2.deck);
         break;
 

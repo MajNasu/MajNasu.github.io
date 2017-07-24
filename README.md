@@ -1,3 +1,5 @@
+PLAY HERE: https://majnasu.github.io/
+
 Welcome to Ultimate Card Battle!
 
 If you've ever played a trading card game, or more commonly known as TCG, you'll have some vague familiarity with this game. The point of the game is to destroy the enemy hero by depleting his/her life points.
