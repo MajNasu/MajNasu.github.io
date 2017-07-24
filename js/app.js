@@ -97,7 +97,7 @@ const startGame = () => {
         "Winged Dragon of Ra",
         $('#player1Hero').append($('<div>30</div>').attr('id', 'hp')),
         "Egyptian Sun God, Almighty Protector of the Sun and Sky",
-        $('#player1Hero').prepend($("<img src='images/hero/ra.png'/>").css({'max-width': '100%', 'max-height': '100%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
+        $('#player1Hero').prepend($("<img src='images/hero/ra.png'/>").css({'width': '100%', 'height': '80%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player1.deck.push(new Card ("Exodia the Forbidden One", 10, 10, $('<img src="images/cards/exodia.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         for(let i = 0; i < 19; i++){
           player1.deck.push(new Card ("Voidwalker", 1, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -153,7 +153,7 @@ const startGame = () => {
         "Winged Dragon of Ra",
         $('#player2Hero').append($('<div>30</div>').attr('id', 'hp')),
         "Egyptian Sun God, Almighty Protector of the Sun and Sky",
-        $('#player2Hero').prepend($("<img src='images/hero/ra.png'/>").css({'max-width': '100%', 'max-height': '100%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
+        $('#player2Hero').prepend($("<img src='images/hero/ra.png'/>").css({'width': '100%', 'height': '80%', 'display': 'block', 'margin': '0 auto', 'border-bottom': '2px solid black', 'border-radius': '6px'})));
         player2.deck.push(new Card ("Exodia the Forbidden One", 10, 10, $('<img src="images/cards/exodia.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
         for(let i = 0; i < 19; i++){
           player2.deck.push(new Card ("Voidwalker", 1, 2, $('<img src="images/cards/voidwalker.jpg"/>').css({'height': '80%', 'width': '100%', 'margin': '0 auto'})));
@@ -233,15 +233,15 @@ const startGame = () => {
 
 //Add End button for player 1
   $('#player1Deck').append($('<div>End Turn</div>').css(
-    {'height': '40%',
-    'width': '60%',
+    {'height': '50%',
+    'width': '100%',
     'margin': '0 auto',
     'border': '1px solid black'}).attr('id', 'end-turn1'));
 
 //Add Draw Card button to the Deck for Player 2
   $('#player1Deck').append($('<div>Draw Card</div>').css({
-    'height': '40%',
-    'width': '60%',
+    'height': '50%',
+    'width': '100%',
     'margin': '0 auto',
     'border': '1px solid black'}).attr('id', 'drawCard1'));
 
@@ -292,13 +292,17 @@ const startGame = () => {
 
 //Add End button to the Deck for Player 2
   $('#player2Deck').append($('<div>End Turn</div>').css(
-    {'height': '40%',
-    'width': '60%',
+    {'height': '50%',
+    'width': '100%',
     'margin': '0 auto',
     'border': '1px solid black'}).attr('id', 'end-turn2'));
 
 //Add Draw Card button to the Deck for Player 2
-  $('#player2Deck').append($('<div>Draw Card</div>').css({'height': '40%', 'width': '60%', 'margin': '0 auto', 'border': '1px solid black'}).attr('id', 'drawCard2'));
+  $('#player2Deck').append($('<div>Draw Card</div>').css(
+    {'height': '50%',
+    'width': '100%',
+    'margin': '0 auto',
+    'border': '1px solid black'}).attr('id', 'drawCard2'));
 
 // Deal Cards Function ---------------------->
   const dealCards = () => {
@@ -343,6 +347,32 @@ const startGame = () => {
 //       player2.deck.shift();
 //     }
 
+// Player 1 Draw
+  const player1Draw = () => {
+    $('.player1CardSlots + #player1Deck').before($('<div/>').addClass('player1CardSlots').css(
+      {'width': '10%',
+      'height': '75%',
+      'margin': 'auto',
+      'background-color': 'white',
+      'max-width': '100%',
+      'max-height': '75%'}))
+      $('#player1Hand > .player1CardSlots').last().append(player1.deck[0].img).append($('<div>' + player1.deck[0].hp + '</div>').attr('id', 'hp')).append($('<div>' + player1.deck[0].attack + '</div>').attr('id', 'attack'));
+      player1.deck.shift();
+  };
+
+// Player 2 Draw
+const player2Draw = () => {
+  $('.player2CardSlots + #player2Deck').before($('<div/>').addClass('player2CardSlots').css(
+    {'width': '10%',
+    'height': '75%',
+    'margin': 'auto',
+    'background-color': 'white',
+    'max-width': '100%',
+    'max-height': '75%'}))
+    $('#player2Hand > .player2CardSlots').last().append(player2.deck[0].img).append($('<div>' + player2.deck[0].hp + '</div>').attr('id', 'hp')).append($('<div>' + player2.deck[0].attack + '</div>').attr('id', 'attack'));
+    player2.deck.shift();
+};
+
 //create Turns
   const gameTurn = () => {
 
@@ -350,8 +380,14 @@ const startGame = () => {
     if(binary === 0){
       $('#player2Hand > .player2CardSlots').off('click');
       $('#end-turn2').off('click');
+      $('#drawCard2').off('click');
 
-      $('.player1CardSlots').on('click', (z) =>{
+      $('#drawCard1').on('click', ()=> {
+        player1Draw();
+        $('#drawCard1').off('click');
+      });
+
+      $('#player1Hand > .player1CardSlots').on('click', (z) =>{
         $(z.currentTarget).remove();
         $('#player1Field').append(z.currentTarget);
       });
@@ -369,6 +405,7 @@ const startGame = () => {
 
 //turn off minion clicks, minions may only attack once per turn
           $('#player2Field > .player2CardSlots').off('click');
+          $('#player2Hero').off('click');
 
 //attacker receives damage
           $(e.currentTarget).find('#hp').html(eval($(e.currentTarget).find('#hp').text() - $(m.currentTarget).find('#attack').text()));
@@ -389,6 +426,7 @@ const startGame = () => {
             $(h.currentTarget).find('#hp').html(eval($(h.currentTarget).find('#hp').text()) - $(e.currentTarget).find('#attack').text());
             checkWin();
             $('#player2Hero').off('click');
+            $('#player2Field > .player2CardSlots').off('click');
           })
         });
 
@@ -401,8 +439,14 @@ const startGame = () => {
     } else if(binary === 1){
       $('#player1Hand > .player1CardSlots').off('click');
       $('#end-turn1').off('click');
+      $('#drawCard1').off('click');
 
-      $('.player2CardSlots').on('click', (e) =>{
+      $('#drawCard2').on('click', ()=> {
+        player2Draw();
+        $('#drawCard2').off('click');
+      });
+
+      $('#player2Hand > .player2CardSlots').on('click', (e) =>{
         $(e.currentTarget).remove();
         $('#player2Field').append(e.currentTarget);
       });
@@ -420,6 +464,7 @@ const startGame = () => {
 
 //turn off minion clicks, minions may only attack once per turn
           $('#player1Field > .player1CardSlots').off('click');
+          $('#player1Hero').off('click');
 
 //attacker receives damage
           $(f.currentTarget).find('#hp').html(eval($(f.currentTarget).find('#hp').text() - $(n.currentTarget).find('#attack').text()));
@@ -440,6 +485,7 @@ const startGame = () => {
             $(h.currentTarget).find('#hp').html(eval($(h.currentTarget).find('#hp').text()) - $(f.currentTarget).find('#attack').text());
             checkWin();
             $('#player1Hero').off('click');
+            $('#player1Field > .player1CardSlots').off('click');
           })
         });
 
