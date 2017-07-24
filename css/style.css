@@ -10,28 +10,29 @@
 
 #hp {
   color: red;
-  font-size: 27px;
+  font-size: 22px;
   float: right;
 }
 
 #attack {
   color: steel;
-  font-size: 27px;
+  font-size: 22px;
   float: left;
 }
 
 #player1Hero > #hp {
-  color:black;
+  color:red;
   text-align:center;
 }
 
 #player2Hero > #hp {
-  color: black;
+  color: red;
   text-align:center;
 }
 
-#end-turn1 {
+#end-turn1, #end-turn2, #drawCard1, #drawCard2 {
   padding: 10px;
+  line-height: 80px;
 }
 
 /*#container {

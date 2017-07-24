@@ -382,7 +382,6 @@ const startGame = () => {
           } else if(eval($(e.currentTarget).find('#hp').text()) <= 0){
             $(e.currentTarget).remove();
           }
-          
         });
 
 //Click the player Hero
