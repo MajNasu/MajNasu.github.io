@@ -8,11 +8,9 @@ Once the minion cards are in play, the player who possesses the minion card may 
 
 Players lose when their HP reaches zero.
 
-
 KNOWN BUGS:
 1. A minion can attack another minion and die in the process. Though dead, the attacking player may keep clicking on opponent minions/hero and continuously deplete HP. (Possible fix: unbind click event after attacking minion is removed.)
 -fixed, each minion can only attack up to one target per turn.
-
 
 2. Drawing cards! Because the hand cards were created as 7 divs with the card info being appended, constructing a draw card function is a lot more difficult than naturally believed.
 -fixed, each player can only draw 1 card per turn.
