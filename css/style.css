@@ -1,3 +1,8 @@
+html body{
+  font-family: 'Oxygen', sans-serif;
+  background-color: #727274;
+  color: #EEEEEF;
+}
 .container {
   width: 100%;
   float: left;
@@ -57,4 +62,5 @@ body{
 #welcome {
   text-align:center;
   font-size: 55px;
+  margin-top: 250px;
 }
