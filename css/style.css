@@ -1,33 +1,33 @@
 html body{
   font-family: 'Oxygen', sans-serif;
-  background-color: #727274;
-  color: #EEEEEF;
 }
-.container {
+
+body{
+  padding-top: 65px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+/*.container {
   width: 100%;
   float: left;
-}
-.col1{
-  width: 20%;
-  display:table-cell;
-}
+}*/
 .nav{
-  z-index:1;
+  z-index: 1;
   top: 0;
   position: fixed;
   width: 100%;
   height: 60px;
+  opacity: .85;
 }
-.navbar-nav{
-  height: 10%;
-  width: 100%;
-}
+
 .navbar-toggle{
   position: relative;
   margin-right: 10px;
   margin-top: 10px;
   background-color: #727274;
 }
+
 .logo{
   vertical-align: middle;
   width: auto;
@@ -45,9 +45,7 @@ html body{
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-ul{
-  width: 100%;
-}
+
 ul li{
   text-align: center;
   margin-top: 5px;
@@ -55,12 +53,38 @@ ul li{
   /*border: 2px solid #727274; /*remove*/
 }
 
-body{
-  padding-top: 60px;
+/*BIO HERE*/
+.bio {
+  width: 100%;
+  text-align: center;
+  margin-top: 60px;
+  color: black;
+  background-image: url('assets/welcomebg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: .7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
-
+/*#bioimg {
+  height: 100%;
+  width: 100%;
+  opacity: .1;
+}*/
 #welcome {
-  text-align:center;
   font-size: 55px;
-  margin-top: 250px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+#iam{
+  margin-top: 50px;
+  width: 70%;
+  margin: 0 auto;
+  color: black;
 }
