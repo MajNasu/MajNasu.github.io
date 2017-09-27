@@ -7,4 +7,7 @@ $(()=>{
       $(this).text(welcomeArray[count % welcomeArray.length]).fadeIn(400);
     });
   }, 4000);
+
+  $('#carouselExampleIndicators').carousel();
+
 });
