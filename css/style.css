@@ -119,3 +119,11 @@ ul li{
   color: white;
   text-align: center;
 }
+
+#projtitle h4{
+  padding: 40px;
+}
+
+#bigthings{
+  font-size: 40px;
+}
