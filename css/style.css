@@ -4,6 +4,8 @@ html, body{
 body{
   font-family: 'Oxygen', sans-serif;
 }
+
+/*NAV HERE*/
 .nav{
   z-index: 1;
   position: fixed;
@@ -40,8 +42,6 @@ ul li{
 }
 
 /*BIO HERE*/
-
-
 .jumbotron {
   width: 100%;
   height: 100%;
@@ -54,21 +54,16 @@ ul li{
   right: 0;
   position: relative;
   z-index: -1;
+  margin-bottom: 0px;
 }
-
 .bio {
   text-align: center;
   padding-top: 20px;
   color: black;
 }
-
-.invisible{
-  height: 700px;
-  width: 100%;
-  position:relative;
-}
-
 #welcome {
+  padding-top: 100px;
+  padding-bottom: 50px;
   font-size: 55px;
   width: 100%;
 }
@@ -80,13 +75,46 @@ ul li{
 }
 
 
-/*Projects*/
-#projtitle{
-  text-align:center;
-  color: black;
-  font-size: 45px;
+/*PROJECTS HERE*/
+.proj{
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  display:flex;
+  flex-direction: row;
 }
 
-.d-block{
-  margin: 0 auto;
+#projects{
+  padding-top: 50px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-inner > .item > img {
+  position: relative;
+  /*top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 600px;*/
+  padding-left: 25px;
+  min-width: 100%;
+  width: 60vw;
+  height: 40vw;
+}
+
+.carousel{
+  margin: 10px 0 0 0;
+  width: 100%;
+  /*height: 360px;*/
+  float:left;
+  position:relative;
+}
+
+#projtitle{
+  padding-top: 15%;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
 }
