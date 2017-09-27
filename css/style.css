@@ -1,29 +1,20 @@
-html body{
-  font-family: 'Oxygen', sans-serif;
-}
-
-body{
-  padding-top: 65px;
-  width: 100%;
+html, body{
   height: 100%;
 }
-
+body{
+  font-family: 'Oxygen', sans-serif;
+}
 .nav{
   z-index: 1;
-  top: 0;
   position: fixed;
   width: 100%;
   height: 60px;
-  opacity: .9;
+  opacity: .87;
 }
-
 .navbar-toggle{
-  position: relative;
-  margin-right: 10px;
   margin-top: 10px;
   background-color: #727274;
 }
-
 .logo{
   vertical-align: middle;
   width: auto;
@@ -32,7 +23,7 @@ body{
   max-height: 75px;
   position: absolute;
   left: 51.5%;
-  margin-left: -50px !important;
+  margin-left: -50px;
   display: block;
   -webkit-tansition: -webkit-transform .8s ease-in-out;
   transition: tranform .8s ease-in-out;
@@ -41,7 +32,6 @@ body{
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-
 ul li{
   text-align: center;
   margin-top: 5px;
@@ -50,15 +40,13 @@ ul li{
 }
 
 /*BIO HERE*/
-.bio {
+
+
+.jumbotron {
   width: 100%;
-  text-align: center;
-  margin-top: 60px;
-  color: black;
-  background-image: url('assets/welcomebg.jpg');
+  height: 100%;
+  background: url('assets/welcomebg.jpg') center center fixed no-repeat;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   opacity: .7;
   top: 0;
   left: 0;
@@ -67,11 +55,19 @@ ul li{
   position: relative;
   z-index: -1;
 }
-/*#bioimg {
-  height: 100%;
+
+.bio {
+  text-align: center;
+  padding-top: 20px;
+  color: black;
+}
+
+.invisible{
+  height: 700px;
   width: 100%;
-  opacity: .1;
-}*/
+  position:relative;
+}
+
 #welcome {
   font-size: 55px;
   width: 100%;
