@@ -85,7 +85,7 @@ ul li{
 }
 
 #projects{
-  padding-top: 50px;
+  padding-top: 150px;
   width: 100%;
   height: 100%;
   position: relative;
@@ -113,7 +113,7 @@ ul li{
 }
 
 #projtitle{
-  padding-top: 15%;
+  padding-top: 20%;
   width: 100%;
   height: 100%;
   color: white;
@@ -121,9 +121,41 @@ ul li{
 }
 
 #projtitle h4{
-  padding: 40px;
+  padding: 25px;
 }
 
 #bigthings{
   font-size: 40px;
+}
+
+/*CONNECT HERE*/
+
+h1{
+  color:black;
+  margin: 0;
+}
+
+#connect{
+  height: 100%;
+  margin-top: 0;
+  background: url('assets/footerbg.jpg') center center fixed no-repeat;
+  background-size: cover;
+  -webkit-filter: brightness(50%);
+  -moz-filter: brightness(80%);
+  -o-filter: brightness(80%);
+  -ms-filter: brightness(80%);
+  filter: brightness(50%);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: relative;
+  z-index: -1;
+  transform: scale(1.1);
+
 }
